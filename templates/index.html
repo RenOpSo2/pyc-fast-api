@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Flask + C API</h1>
+    <p>High Performance with Native C Core</p>
+    
+    <div>
+        <h2>Server Information:</h2>
+        <pre>{{ info }}</pre>
+    </div>
+    
+    <div>
+        <h2>API Endpoints:</h2>
+        <ul>
+            <li><a href="/">GET /</a> - This page</li>
+            <li><a href="/api/data">GET /api/data</a> - Data processed in C</li>
+            <li><a href="/api/health">GET /api/health</a> - Health check</li>
+        </ul>
+    </div>
+    
+    <div>
+        <button onclick="testAPI()">Test API</button>
+    </div>
+    
+    <div id="result" style="display:none; margin-top:20px; padding:10px; border:1px solid #ccc;">
+        <h3>API Response:</h3>
+        <pre id="response"></pre>
+    </div>
+    
+    <script>
+        async function testAPI() {
+            const start = Date.now();
+            const response = await fetch('/api/data');
+            const end = Date.now();
+            const data = await response.json();
+            
+            document.getElementById('response').textContent = 
+                `Response Time: ${end - start}ms\n\n` +
+                JSON.stringify(data, null, 2);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
