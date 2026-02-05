@@ -9,4 +9,4 @@ This project mixes Python (Flask/FastAPI) with a C runtime for extra speed, and 
 1. **Fork** the repo to your GitHub.
 2. **Clone** your fork locally:
    ```bash
-   git clone 
+   git clone https://github.com/RenOpSo2/pyc-fast-api
