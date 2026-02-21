@@ -1,6 +1,13 @@
+
 # Fast Backend API: Python Flask + C Runtime
 
 A high-performance backend API using Python Flask with a C native runtime for faster request processing.
+
+---
+
+Remember This Backend Is Only For Development Needs, For Production You Can Modify It
+
+---
 
 Supports VPS, Linux, and macOS.
 
@@ -13,6 +20,7 @@ Supports VPS, Linux, and macOS.
 - Faster processing than pure Python
 - JSON API endpoints
 - Ready for deployment on VPS
+- Backend Development
 
 ---
 
@@ -52,7 +60,7 @@ clang -shared -o runtime/core.so -fPIC runtime/core.c
 Running the Server
 
 ```bash
-python3 flask-api.py
+flask run
 ```
 
 ---
@@ -78,6 +86,8 @@ Response Time: 19ms
   "status": "success"
 }
 ```
+
+Explanation: You can add or activate debug mode for development.
 
 Author: @R3noDev
 Thank You
